@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\name{Vighnesh}{Sivaraman}
+\newcommand*{\customcventry}[7][.13em]{
+\begin{tabular}{@{}l}
+{\bfseries #4} \
+{\itshape #3}
+\end{tabular}
+\hfill
+\begin{tabular}{l@{}}
+{\bfseries #5} \
+{\itshape #2}
+\end{tabular}
+\ifx&#7&%
+\else{\
+\begin{minipage}{\maincolumnwidth}%
+\small#7%
+\end{minipage}}\fi%
+\par\addvspace{#1}}
+\begin{document}
+\makecvtitle
+\vspace*{-10mm}
+\begin{center}\textbf{ Senior Software Engineer | AI/ML $\bullet$ Full-Stack $\bullet$ AWS $\cdot$ GCP $\cdot$ Azure}\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+\faMobile\enspace +91 8148285956 & \enspace jeevavignesh@gmail.com & \faHome\enspace West Tambaram, Chennai, TN, IND \\
+\faLinkedin\enspace \color{blue} \href{https://www.linkedin.com/in/vighnesh-sivaraman/}{in/vighnesh-sivaraman} &
+\faGithub\enspace \color{blue} \href{https://github.com/VighneshS}{github.com/VighneshS} & \enspace {$\mathbb{X}$}\enspace \color{blue} \href{https://x.com/jeevavighnesh}{x.com/jeevavighnesh} \\
+& \faGlobe\enspace \color{blue} \href{https://vighneshs.github.io/blog}{vighneshs.github.io/blog} &
+\end{tabular}
+\end{center}
+
+\section{Profile}
+{Senior Software Engineer with 8+ years building full-stack, cloud-native, and AI/ML systems. Currently architecting agentic AI platforms on AWS using MCP servers and RAG pipelines, delivering a 70\% reduction in manual intervention. Track record of shipping production ML, microservices, and developer tooling across AWS, GCP, and Azure.}
+
+\section{Professional Experience}
+\customcventry{07/2024 ‐ Present}{{\color{blue}\href{https://kripya.com/}{Kripya Solutions Private Ltd}}}{Sr. Software Engineer,}{Chennai, TN, IND}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Architected agentic AI platform using MCP servers on AWS ECS --- autonomous agents handle project management, incident response, and knowledge workflows, cutting manual intervention by \textbf{70\%}
+\item Built conversational AI products (analytics, recruitment, sustainability, customer support) using GPT-4 and RAG; enabled non-technical teams to self-serve data queries across enterprise knowledge bases
+\item Engineered intelligent document generation pipeline automating root cause analysis reports (PDF/DOCX) from incident tickets, significantly reducing time-to-resolution for engineering escalations
+\item Drove cloud-native microservices modernisation on AWS (NestJS, ECS, SigV4, CloudFormation); designed Atlassian integrations (Jira, Confluence) for AI-driven ticket tracking and knowledge management
+\item Led monorepo modernisation (ESM/CJS migration, Turbo + pnpm workspaces, React design system refactor) reducing CI build times by \textbf{40\%}
+\item Implemented webhook-driven multi-agent observability pipeline enabling real-time incident detection, automated alerting, and event-driven escalation across distributed services
+\end{itemize}}}
+
+\customcventry{01/2023 ‐ 07/2024}{{\color{blue}\href{https://www.aliciotech.com/}{Allic Infotech}}}{Machine Learning Engineer Intern,}{Silicon Valley, CA}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Developed Python application detecting individual skin layers from ultrasound images using a custom RNN model; preprocessed medical imaging datasets and applied data augmentation to improve layer detection accuracy
+\item Optimised model performance through hyperparameter tuning and cross-validation; established end-to-end CI/CD pipeline to deploy the model as a production web application
+\end{itemize}}}
+
+\customcventry{09/2022 ‐ 01/2023}{{\color{blue}\href{https://revature.com/}{Revature, LLC}}}{Data Analyst Intern,}{Reston, VA}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Created notebooks for ensuring data warehouse integrity in Azure Databricks.
+\item Developed visual reports and dashboards using Power BI; gained expertise in data warehouse ETL pipeline concepts.
+\end{itemize}}}
+
+\customcventry{02/2022 ‐ 09/2022}{{\color{blue}\href{https://ranger.uta.edu/~mingli/}{The University of Texas at Arlington}}}{Graduate Research Assistant,}{Arlington, TX}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Developed Android applications and machine learning models for research including the published paper ``Continuous Authentication using Human-Induced Electric Potential'' (ACSAC 2023).
+\item Organized workshops and contributed to the creation of a cloud-based IoT system for real-time water quality monitoring.
+\end{itemize}}}
+
+\customcventry{08/2016 ‐ 12/2020}{{\color{blue}\href{https://revature.com/}{Revature, LLC}}}{Senior Software Engineer,}{Chennai, TN, IND}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\item Led a team of five on the Operations and Management track, owning sprint planning, daily production bug fixes, feature delivery, and stakeholder communication
+\item Designed and built microservices for enterprise web applications using Java Spring Boot, MySQL, and Angular; maintained 99.9\% uptime across production environments
+\item Architected and managed cloud infrastructure on AWS and GCP (EC2, RDS, EKS, Terraform), reducing infrastructure provisioning time through IaC automation
+\item Delivered RESTful APIs consumed by 10,000+ daily active users; enforced API versioning, rate limiting, and security best practices
+\item Mentored junior developers, conducted code reviews, and championed CI/CD adoption using Jenkins, reducing deployment failures by standardising release workflows
+\end{itemize}}}
+
+\section{Education}
+\customcventry{2021-2023}{\color{blue}\href{https://www.uta.edu/}{The University of Texas at Arlington}}{MS Computer Science (Thesis)}{Arlington, TX, USA}{}{}{\textbf{Thesis:} Continuous Authentication using Human-Induced Electric Potential. Relevant Courses: Data Mining, Artificial Intelligence, Machine Learning, Web Data Management, Design and Analysis of Algorithms, Neural Networks, and Information Security.}
+
+\section{Publications}
+\customcventry{}{}{\color{blue}\href{https://doi.org/10.1145/3627106.3627124}{Continuous Authentication Using Human-Induced Electric Potential}}{}{}{}{Murali, S., Jin, W., Sivaraman, V., Zhu, H., Ji, T., Li, P., \& Li, M. (2023). In Proceedings of the 39th Annual Computer Security Applications Conference (ACSAC 2023). Association for Computing Machinery. DOI: 10.1145/3627106.3627124}
+
+\customcventry{}{}{\color{blue}\href{https://www.academia.edu/38392049/Real_TimeAccident_Analytics}{Real-time accident analytics}}{}{}{}{Published at Journal of Chemical and Pharmaceutical Sciences, ISSN: 0974-2115 on June 2017}
+
+\section{Certifications}
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{Information Systems Security Professionals} --- Certified by CNSS \& NSA (CNSSI 4013E, December 2021)}
+\item {\textbf{System Administrators Certification} --- Certified by CNSS \& NSA (NSTISSI 4011, December 2021)}
+\end{itemize}}
+
+\section{Skills}
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{AI \& LLMs:} GPT-4, RAG, MCP Servers, Agentic Workflows, Prompt Engineering, LLM Fine-tuning, GANs, Transformers, Vector Databases}
+\item {\textbf{ML \& Data:} TensorFlow, PyTorch, Scikit-learn, RNNs, CNNs, Power BI, ETL Pipelines, Data Visualization}
+\item {\textbf{Cloud:} AWS (ECS, EC2, S3, EKS, SageMaker, CloudFormation), GCP Vertex AI, Azure Databricks}
+\item {\textbf{Backend \& DevOps:} NestJS, Spring Boot, Node.js, Python, Java, Docker, Kubernetes, Terraform, GitHub Actions, CI/CD}
+\item {\textbf{Frontend:} React, Angular, TypeScript, Tailwind CSS, Astro, pnpm Workspaces, Turbo}
+\item {\textbf{Data \& NLP:} SQL, Tokenization, Sentiment Analysis, Chatbot Development, Seaborn, matplotlib}
+\end{itemize}}
+
+\section{Projects}
+\customcventry{Tools: Python 3.7, Twitter API V2, NLTK, Naive Bayes}{\color{blue}\href{https://vighnesh-studies.blogspot.com/2021/05/disaster-alert-system.html}{Disaster Alert System}}{Data Mining / NLP}{}{}{}{Developed by analyzing tweets by categorizing a tweet as a disaster or not by using the Naive Bayes Classifier and improving its performance using K-fold cross-validation.}
+
+\customcventry{Tools: Python 3.7, TensorFlow 2.7, Keras, Scikit-learn}{\color{blue}\href{https://github.com/VighneshS/neura_colorizer}{Neura Coloriser}}{Machine Learning (GAN)}{}{}{}{Created a Generative Adversarial Network to paint colours to an input grey-scale image. Used LAB colour space representations and a self-developed GAN for generating the colour images.}
+
+\customcventry{Tools: HTML, CSS, JavaScript, Canvas API}{\color{blue}\href{https://github.com/VighneshS/sorting-visualization}{Sorting Visualization}}{Algorithms}{}{}{}{Designed web application to visualize and analyze different sorting algorithms including Heap, Quick, Insertion, Bubble and Selection sort, comparing time complexities and iterations.}
+
+\customcventry{Tools: Python, Pandas, Scikit-learn, Feature Engineering}{\color{blue}\href{https://github.com/VighneshS}{Titanic --- ML from Disaster}}{Data Science}{}{}{}{Performed exploratory data analysis and feature engineering for survival prediction on the Titanic dataset using Scikit-learn.}
+
+\customcventry{Tools: Android, Web, Data Analytics, Real-time Systems}{\color{blue}\href{https://www.academia.edu/38392049/Real_TimeAccident_Analytics}{Real-Time Accident Analytics}}{Research / Android}{}{}{}{Developed a real-time accident analytics system for data collection and analysis. Published at Journal of Chemical and Pharmaceutical Sciences.}
+
+\end{document}

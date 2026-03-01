@@ -1,0 +1,75 @@
+---
+import { yearsExp } from '../lib/experience';
+
+// All professional + academic experience periods (internships & research count)
+const stats = [
+  { value: `${yearsExp}+`, label: 'Years Experience',    icon: '⚡' },
+  { value: '2',            label: 'Countries Worked',    icon: '🌏' },
+  { value: '1',            label: 'Published Paper',     icon: '📄' },
+  { value: '10+',          label: 'AI/ML Systems Built', icon: '🤖' },
+];
+---
+
+<section id="about">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div class="reveal">
+        <div class="section-label">About Me</div>
+        <h2 class="font-display font-bold text-4xl text-white mb-2">Who I Am</h2>
+        <div class="section-divider"></div>
+
+        <div class="space-y-4 text-slate-400 leading-relaxed text-[0.95rem]">
+          <p>
+            I'm a <span class="text-sky-400 font-medium">Senior Software Engineer & AI/ML Engineer</span> based in
+            West Tambaram, Chennai, India, with {yearsExp}+ years of experience building enterprise-grade software
+          </p>
+          <p>
+            My expertise sits at the intersection of <span class="text-indigo-400 font-medium">AI/ML</span> and
+            <span class="text-sky-400 font-medium">cloud-native engineering</span> — I architect platforms where
+            autonomous AI agents automate complex workflows, and conversational AI makes data accessible to everyone.
+          </p>
+          <p>
+            I've shipped production AI solutions using
+            <span class="text-emerald-400 font-medium">MCP servers</span>, GPT-4, and RAG pipelines on AWS.
+            I hold an <span class="text-sky-400 font-medium">MS in Computer Science</span> from UT Arlington
+            (thesis track) and have a peer-reviewed paper published at ACSAC 2023.
+          </p>
+          <p>
+            When I'm not building AI systems, I explore new ML techniques, contribute to open source,
+            and write about distributed systems architecture.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a
+            href="#contact"
+            class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5"
+            style="background: linear-gradient(135deg, #0284c7, #4f46e5); box-shadow: 0 4px 20px rgba(2,132,199,0.25);"
+          >
+            Let's Connect
+          </a>
+          <a
+            href="#experience"
+            class="px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-300 border border-slate-700 hover:border-sky-500/50 hover:text-sky-400 transition-all"
+          >
+            See My Work
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="grid grid-cols-2 gap-4 reveal reveal-delay-2">
+        {stats.map(({ value, label, icon }) => (
+          <div class="glass rounded-2xl p-6 text-center hover:border-sky-400/30 transition-all group cursor-default">
+            <div class="text-3xl mb-2">{icon}</div>
+            <div class="font-display font-bold text-3xl text-white mb-1 group-hover:text-sky-400 transition-colors">{value}</div>
+            <div class="text-slate-500 text-sm">{label}</div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>

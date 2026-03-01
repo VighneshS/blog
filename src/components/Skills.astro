@@ -1,0 +1,91 @@
+---
+const skillGroups = [
+  {
+    category: 'Generative AI & LLMs',
+    color: 'purple',
+    icon: '🤖',
+    skills: ['GANs', 'Transformers', 'LLM Fine-tuning', 'Prompt Engineering', 'RAG', 'MCP Servers', 'GPT-4', 'Agentic Workflows', 'Vector Databases'],
+  },
+  {
+    category: 'ML & Data Science',
+    color: 'blue',
+    icon: '🧠',
+    skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Neural Networks', 'RNNs', 'CNNs', 'Model Optimization', 'Data Analysis & Visualization'],
+  },
+  {
+    category: 'Cloud & Infrastructure',
+    color: 'orange',
+    icon: '☁️',
+    skills: ['AWS ECS', 'AWS EC2', 'AWS S3', 'SageMaker', 'EKS', 'GCP Vertex AI', 'Azure Databricks', 'CloudFormation', 'Multi-account AWS'],
+  },
+  {
+    category: 'Programming Languages',
+    color: 'green',
+    icon: '💻',
+    skills: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Node.js', 'SQL', 'C++'],
+  },
+  {
+    category: 'Backend & APIs',
+    color: 'blue',
+    icon: '⚙️',
+    skills: ['NestJS', 'Spring Boot', 'RESTful APIs', 'Microservices', 'Event-Driven', 'WebHooks', 'SigV4 Auth', 'pnpm Workspaces', 'Turbo'],
+  },
+  {
+    category: 'Frontend & UI',
+    color: 'pink',
+    icon: '🎨',
+    skills: ['React', 'Angular', 'Tailwind CSS', 'Component Libraries', 'React Hooks', 'Custom Decorators', 'Astro'],
+  },
+  {
+    category: 'DevOps & Tooling',
+    color: 'orange',
+    icon: '🔧',
+    skills: ['Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'GitHub Actions', 'CI/CD Pipelines', 'ESM/CJS Modules'],
+  },
+  {
+    category: 'NLP & Data',
+    color: 'green',
+    icon: '📊',
+    skills: ['Tokenization', 'Sentiment Analysis', 'Chatbot Development', 'Power BI', 'matplotlib', 'Seaborn', 'ETL Pipelines'],
+  },
+];
+
+const colorClass: Record<string, string> = {
+  blue:   'tag',
+  purple: 'tag tag-purple',
+  orange: 'tag tag-orange',
+  green:  'tag tag-green',
+  pink:   'tag tag-pink',
+};
+---
+
+<section id="skills" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Skills & Technologies</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">What I Work With</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+      <p class="text-slate-500 max-w-xl mx-auto text-sm">
+        A broad toolkit spanning AI/ML, cloud-native engineering, and full-stack development.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      {skillGroups.map(({ category, color, icon, skills }, i) => (
+        <div class={`glass rounded-2xl p-5 hover:border-sky-400/30 transition-all reveal reveal-delay-${Math.min((i % 4) + 1, 4)}`}>
+          <div class="flex items-center gap-2.5 mb-4">
+            <span class="text-xl">{icon}</span>
+            <h3 class="font-display font-semibold text-sm text-white leading-tight">{category}</h3>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            {skills.map(skill => (
+              <span class={colorClass[color] ?? 'tag'}>{skill}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

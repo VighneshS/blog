@@ -1,0 +1,143 @@
+---
+const experiences = [
+  {
+    company: 'Kripya Solutions Private Ltd',
+    role: 'Sr. Software Engineer',
+    location: 'Chennai, TN, IND',
+    period: '07/2024 – Present',
+    current: true,
+    highlights: [
+      'Architected and deployed AI-powered enterprise automation platform using Model Context Protocol (MCP) servers on AWS ECS, enabling autonomous AI agents to execute complex workflows across project management, incident response, and knowledge management — reducing manual intervention by 70%.',
+      'Designed and implemented conversational AI solutions for analytics translation, sustainability metrics calculation, recruitment automation, and customer support using GPT models and RAG, enabling non-technical stakeholders to perform self-service data queries.',
+      'Led end-to-end development of an intelligent document generation system automating root cause analysis reporting from incident tickets — producing formatted PDFs and DOCX with configurable templates, timezone awareness, and priority-based triggers.',
+      'Built enterprise integrations with the Atlassian ecosystem (Jira, Confluence) to automate ticket tracking, knowledge base updates, and incident management through AI-driven workflows, improving cross-team collaboration.',
+      'Engineered cloud-native microservices architecture on AWS using NestJS, TypeScript, and containerized ECS deployments; implemented SigV4 authentication and managed multi-account infrastructure with CloudFormation.',
+      'Drove modernization initiatives: ESM/CJS module migration across monorepo packages, React component library refactoring for design systems, and build pipeline optimization using Turbo and pnpm workspaces — reducing build times by 40%.',
+      'Developed extensible UI component framework with MCP App infrastructure, custom decorators, and React hooks integration for AI-powered interfaces and prompt engineering workflows.',
+      'Implemented observability and reliability improvements: webhook processing, event-driven architectures, multi-agent collaboration patterns, and automated incident detection with AI-powered summary generation.',
+    ],
+    tech: ['AWS ECS', 'NestJS', 'TypeScript', 'MCP', 'GPT-4', 'RAG', 'React', 'Docker', 'Jira', 'Confluence', 'CloudFormation', 'Turbo', 'pnpm'],
+  },
+  {
+    company: 'Allic Infotech',
+    role: 'Machine Learning Engineer Intern',
+    location: 'Silicon Valley, CA',
+    period: '01/2023 – 07/2024',
+    current: false,
+    highlights: [
+      'Developed a Python-based application for detecting individual layers of human skin from ultrasound images using an RNN model.',
+      'Established end-to-end pipelines to package and deploy the application as a production web app.',
+    ],
+    tech: ['Python', 'TensorFlow', 'RNN', 'Flask', 'Medical Imaging', 'Signal Processing'],
+  },
+  {
+    company: 'Revature, LLC',
+    role: 'Data Analyst Intern',
+    location: 'Reston, VA',
+    period: '09/2022 – 01/2023',
+    current: false,
+    highlights: [
+      'Created notebooks for ensuring data warehouse integrity and quality checks in Azure Databricks.',
+      'Developed visual reports and dashboards using Power BI; gained expertise in data warehouse ETL pipeline design.',
+    ],
+    tech: ['Azure Databricks', 'Power BI', 'Python', 'SQL', 'ETL', 'Data Warehousing'],
+  },
+  {
+    company: 'The University of Texas at Arlington',
+    role: 'Graduate Research Assistant',
+    location: 'Arlington, TX',
+    period: '02/2022 – 09/2022',
+    current: false,
+    highlights: [
+      'Developed Android applications and ML models for research on "Continuous Authentication using Human-Induced Electric Potential" — published at ACSAC 2023.',
+      'Organized workshops and contributed to a cloud-based IoT system for real-time water quality monitoring.',
+    ],
+    tech: ['Android', 'Machine Learning', 'IoT', 'Cloud', 'Signal Processing', 'Security'],
+  },
+  {
+    company: 'Revature, LLC',
+    role: 'Senior Software Engineer',
+    location: 'Chennai, TN, IND',
+    period: '08/2016 – 12/2020',
+    current: false,
+    highlights: [
+      'Led a team of five on the Operations & Management team, overseeing daily production bug fixes and feature delivery.',
+      'Developed microservices for web applications using MySQL, Java Spring Boot framework, and Angular.',
+      'Managed and improved product infrastructure on AWS and GCP: EC2, RDS, EKS, and Terraform automation scripts.',
+    ],
+    tech: ['Java Spring', 'Angular', 'MySQL', 'AWS EC2', 'AWS RDS', 'EKS', 'GCP', 'Terraform', 'Docker'],
+  },
+];
+---
+
+<section id="experience">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Career</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Experience</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+    </div>
+
+    <div class="relative">
+      <!-- Vertical timeline line -->
+      <div
+        class="absolute left-4 top-7 bottom-7 w-px hidden sm:block"
+        style="background: linear-gradient(180deg, rgba(56,189,248,0.5) 0%, rgba(56,189,248,0.05) 100%);"
+      ></div>
+
+      <div class="space-y-8">
+        {experiences.map((exp, i) => (
+          <div class={`relative sm:pl-14 reveal reveal-delay-${Math.min(i + 1, 4)}`}>
+            <!-- Timeline dot -->
+            <div class={`absolute left-0 top-6 w-8 h-8 rounded-full hidden sm:flex items-center justify-center flex-shrink-0 ${exp.current ? 'border-2 border-sky-400' : 'border-2 border-slate-700'}`}
+                 style={`background: ${exp.current ? 'rgba(56,189,248,0.12)' : 'rgba(30,41,59,0.8)'};`}>
+              <div class={`w-2.5 h-2.5 rounded-full ${exp.current ? 'bg-sky-400 shadow-lg' : 'bg-slate-600'}`}
+                   style={exp.current ? 'box-shadow: 0 0 8px rgba(56,189,248,0.8); animation: pulse 2s infinite;' : ''}></div>
+            </div>
+
+            <div class="glass rounded-2xl p-6 sm:p-7 hover:border-sky-400/25 transition-all duration-300">
+              <!-- Header -->
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-5">
+                <div>
+                  <div class="flex items-center flex-wrap gap-2 mb-1">
+                    <h3 class="font-display font-bold text-lg text-white">{exp.role}</h3>
+                    {exp.current && (
+                      <span class="px-2 py-0.5 rounded-full text-xs font-semibold"
+                            style="background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.3);">
+                        Current
+                      </span>
+                    )}
+                  </div>
+                  <p class="text-sky-400 font-semibold text-sm">{exp.company}</p>
+                </div>
+                <div class="text-right shrink-0">
+                  <div class="text-slate-300 text-sm font-medium">{exp.period}</div>
+                  <div class="text-slate-500 text-xs mt-0.5">{exp.location}</div>
+                </div>
+              </div>
+
+              <!-- Bullet points -->
+              <ul class="space-y-2.5 mb-5">
+                {exp.highlights.map(point => (
+                  <li class="flex gap-3 text-slate-400 text-sm leading-relaxed">
+                    <span class="text-sky-500 mt-1 flex-shrink-0 text-xs">▸</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <!-- Tech tags -->
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/60">
+                {exp.tech.map(t => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

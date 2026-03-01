@@ -1,0 +1,205 @@
+---
+const contactItems = [
+  {
+    label: 'Email',
+    value: 'jeevavignesh@gmail.com',
+    href: 'mailto:jeevavignesh@gmail.com',
+    icon: '✉️',
+    external: false,
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/vighnesh-sivaraman',
+    href: 'https://linkedin.com/in/vighnesh-sivaraman',
+    icon: '💼',
+    external: true,
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/VighneshS',
+    href: 'https://github.com/VighneshS',
+    icon: '⚡',
+    external: true,
+  },
+  {
+    label: 'Location',
+    value: 'West Tambaram, Chennai, Tamil Nadu, India',
+    href: null,
+    icon: '📍',
+    external: false,
+  },
+];
+---
+
+<section id="contact" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Get In Touch</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Contact Me</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+      <p class="text-slate-500 max-w-lg mx-auto text-sm">
+        Have a project in mind or want to connect? I'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+      <!-- Direct contact -->
+      <div class="reveal">
+        <h3 class="font-display font-semibold text-lg text-white mb-6">Direct Contact</h3>
+        <div class="space-y-3">
+          {contactItems.map(({ label, value, href, icon, external }) => (
+            <div class="glass rounded-xl p-4 flex items-center gap-4 hover:border-sky-400/25 transition-all">
+              <div
+                class="w-10 h-10 rounded-lg flex items-center justify-center text-lg flex-shrink-0"
+                style="background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.15);"
+              >
+                {icon}
+              </div>
+              <div>
+                <div class="text-slate-500 text-xs uppercase tracking-wider mb-0.5">{label}</div>
+                {href ? (
+                  <a
+                    href={href}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noopener noreferrer' : undefined}
+                    class="text-slate-300 text-sm hover:text-sky-400 transition-colors break-all"
+                  >
+                    {value}
+                  </a>
+                ) : (
+                  <span class="text-slate-300 text-sm">{value}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="glass rounded-2xl p-7 reveal reveal-delay-2">
+        <h3 class="font-display font-semibold text-lg text-white mb-6">Send a Message</h3>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xdkngkap"
+          method="POST"
+          class="space-y-4"
+        >
+          <div>
+            <label class="block text-slate-400 text-sm mb-1.5 font-medium" for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="John Doe"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-sm mb-1.5 font-medium" for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="john@example.com"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-sm mb-1.5 font-medium" for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Project inquiry / Let's connect"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label class="block text-slate-400 text-sm mb-1.5 font-medium" for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              placeholder="Tell me about your project or just say hi!"
+              class="form-input resize-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            id="submit-btn"
+            class="w-full py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+            style="background: linear-gradient(135deg, #0284c7, #4f46e5); box-shadow: 0 4px 20px rgba(2,132,199,0.3);"
+          >
+            Send Message
+          </button>
+          <p id="form-status" class="text-center text-sm hidden"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+  }
+  .form-input::placeholder { color: #475569; }
+  .form-input:focus {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.08);
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const btn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.reset();
+        if (status) {
+          status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+          status.style.color = '#34d399';
+          status.classList.remove('hidden');
+        }
+        btn.textContent = 'Sent!';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      if (status) {
+        status.textContent = 'Something went wrong. Please email me directly.';
+        status.style.color = '#f87171';
+        status.classList.remove('hidden');
+      }
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
+</script>

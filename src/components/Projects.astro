@@ -1,0 +1,206 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const projects = [
+  {
+    category: 'Data Mining',
+    name: 'Disaster Alert System',
+    description:
+      'Analyzed tweets to classify disaster events using Naive Bayes Classifier with K-fold cross-validation for improved accuracy. Enables real-time disaster detection from social media streams.',
+    tech: ['Python 3.7', 'Twitter API v2', 'NLTK', 'Naive Bayes', 'K-fold CV', 'NLP'],
+    image: 'disaster_alert_system.png',
+    emoji: '🚨',
+    gradient: 'from-sky-900/40 to-blue-900/40',
+    blog: 'https://vighnesh-studies.blogspot.com/2021/05/disaster-alert-system.html',
+    doc:  'https://docs.google.com/document/d/1sNgRP_AUuPaI_qPRXLYU6qoXwY1xI5ZB/edit?usp=sharing',
+    colab: 'https://colab.research.google.com/drive/1FZFm37dM2X6Mc6qRxPHQnKU4xwDq06sp?usp=sharing',
+  },
+  {
+    category: 'Machine Learning',
+    name: 'Neura Coloriser',
+    description:
+      'A Generative Adversarial Network that colorizes grayscale input images. Uses LAB color space representations and a custom self-developed GAN architecture for realistic, high-quality color generation.',
+    tech: ['Python 3.7', 'TensorFlow 2.7', 'Keras', 'GAN', 'Scikit-learn', 'LAB Color Space'],
+    image: 'cifar10.png',
+    emoji: '🎨',
+    gradient: 'from-purple-900/40 to-indigo-900/40',
+    github: 'https://github.com/VighneshS/neura_colorizer',
+  },
+  {
+    category: 'Artificial Intelligence',
+    name: 'Find Route',
+    description:
+      "Implements the A* Search Algorithm for optimal pathfinding between states. Supports both informed (with heuristic) and uninformed search modes using Priority Queues for efficient traversal.",
+    tech: ['Python 3.7', 'A* Search', 'Priority Queues', 'Heuristics', 'Graph Search'],
+    image: null,
+    emoji: '🗺️',
+    gradient: 'from-emerald-900/40 to-teal-900/40',
+    github: 'https://github.com/VighneshS/find_route',
+  },
+  {
+    category: 'Natural Language Processing',
+    name: 'Sentiment Prediction',
+    description:
+      'Predicts the sentiment of text using Naive Bayes classification. Trained and evaluated on labelled datasets to distinguish positive and negative sentiment with measurable accuracy improvements.',
+    tech: ['Python 3.7', 'Scikit-learn', 'Naive Bayes', 'NLP', 'Text Classification'],
+    image: null,
+    emoji: '💬',
+    gradient: 'from-pink-900/40 to-rose-900/40',
+    blog: 'https://vighnesh-studies.blogspot.com/2021/04/sentiment-prediction-using-naive-bayes.html',
+    github: 'https://github.com/VighneshS/sentiment_prediction',
+  },
+  {
+    category: 'Algorithms & Visualization',
+    name: 'Sorting Visualization',
+    description:
+      'An interactive browser-based tool that visually animates popular sorting algorithms in real time, making algorithmic concepts tangible and easy to understand.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Algorithms', 'Canvas'],
+    image: null,
+    emoji: '📊',
+    gradient: 'from-orange-900/40 to-amber-900/40',
+    github: 'https://github.com/VighneshS/sorting-visualization',
+    demo: 'https://vighneshs.github.io/sorting-visualization/',
+  },
+  {
+    category: 'Machine Learning',
+    name: 'CIFAR-10 Image Classifier',
+    description:
+      'Built a convolutional image classifier on the CIFAR-10 dataset using PyTorch. Covers dataset loading, model architecture design, training loop, and accuracy evaluation.',
+    tech: ['Python 3.7', 'PyTorch', 'CNN', 'CIFAR-10', 'Deep Learning'],
+    image: 'cifar10.png',
+    emoji: '🖼️',
+    gradient: 'from-violet-900/40 to-purple-900/40',
+    blog: 'https://vighnesh-studies.blogspot.com/2021/03/cifar10-image-classifier-using-pytorch.html',
+    github: 'https://github.com/VighneshS/CIFAR10',
+  },
+  {
+    category: 'Data Science',
+    name: 'Titanic — ML from Disaster',
+    description:
+      'Classic Kaggle survival prediction challenge. Applied feature engineering, exploratory data analysis, and multiple classification models to predict passenger survival on the Titanic.',
+    tech: ['Python', 'Pandas', 'Scikit-learn', 'Feature Engineering', 'EDA'],
+    image: null,
+    emoji: '🚢',
+    gradient: 'from-cyan-900/40 to-sky-900/40',
+    blog: 'https://vighnesh-studies.blogspot.com/2021/02/titanic-machine-learning-from-disaster.html',
+  },
+  {
+    category: 'Research',
+    name: 'Real-Time Accident Analytics',
+    description:
+      'Published research on a real-time accident detection and analytics system. Built an Android-based data collection pipeline feeding into a web analytics dashboard for incident reporting.',
+    tech: ['Android', 'Web', 'Data Analytics', 'Real-time Systems'],
+    image: null,
+    emoji: '🔬',
+    gradient: 'from-red-900/40 to-orange-900/40',
+    link: 'https://jchps.com/special_issues.php?issueid=30&year=2017',
+  },
+];
+---
+
+<section id="projects" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Work</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Projects</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+      <p class="text-slate-500 max-w-lg mx-auto text-sm">
+        Academic and personal projects spanning data mining, machine learning, AI, and research.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projects.map(({ category, name, description, tech, image, emoji, gradient, github, blog, link, demo, doc, colab }, i) => (
+        <div class={`glass rounded-2xl overflow-hidden hover:-translate-y-1.5 hover:border-sky-400/30 transition-all duration-300 flex flex-col reveal reveal-delay-${(i % 3) + 1}`}>
+          <!-- Card visual -->
+          <div class={`h-40 bg-gradient-to-br ${gradient} flex items-center justify-center relative overflow-hidden`}>
+            {image && (
+              <img
+                src={`${base}/images/${image}`}
+                alt={name}
+                class="absolute inset-0 w-full h-full object-cover opacity-30"
+              />
+            )}
+            <span class="text-6xl relative z-10 drop-shadow-lg">{emoji}</span>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6 flex flex-col flex-1">
+            <span class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--accent2);">{category}</span>
+            <h3 class="font-display font-bold text-lg text-white mb-3">{name}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5 flex-1">{description}</p>
+
+            <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800/60 mb-4">
+              {tech.map(t => (
+                <span class="tag">{t}</span>
+              ))}
+            </div>
+
+            <!-- Links -->
+            {(github || demo || blog || doc || colab || link) && (
+              <div class="flex flex-wrap gap-3 mt-auto pt-3 border-t border-slate-800/40">
+                {github && (
+                  <a href={github} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                )}
+                {demo && (
+                  <a href={demo} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-emerald-400 transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
+                {blog && (
+                  <a href={blog} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-sky-400 transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                    </svg>
+                    Blog Post
+                  </a>
+                )}
+                {doc && (
+                  <a href={doc} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-amber-400 transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    Proposal
+                  </a>
+                )}
+                {colab && (
+                  <a href={colab} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-orange-400 transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Notebook
+                  </a>
+                )}
+                {link && (
+                  <a href={link} target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 transition-colors duration-200">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                    View
+                  </a>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
