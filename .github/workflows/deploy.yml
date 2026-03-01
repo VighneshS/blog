@@ -21,17 +21,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compile Resume PDF
+      - name: Compile Resume PDF (main)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: Vighnesh_Sivaraman_Resume.tex
           working_directory: resume
           latexmk_use_xelatex: true
 
-      - name: Place Resume PDF in public/docs
-        run: |
-          mkdir -p public/docs
-          cp resume/Vighnesh_Sivaraman_Resume.pdf public/docs/Vighnesh_Sivaraman_Resume.pdf
+      - name: Compile Resume PDF (Accenture AIML variant)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Vighnesh_Sivaraman_Resume_Accenture_AIML.tex
+          working_directory: resume
+          latexmk_use_xelatex: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

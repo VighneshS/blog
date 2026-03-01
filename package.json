@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run build:resume && astro build",
     "preview": "astro preview",
-    "build:resume": "cd resume && latexmk -C && latexmk -xelatex -interaction=nonstopmode Vighnesh_Sivaraman_Resume.tex && mkdir -p ../public/docs && cp Vighnesh_Sivaraman_Resume.pdf ../public/docs/Vighnesh_Sivaraman_Resume.pdf",
+    "build:resume": "mkdir -p public/docs && cp resume/Vighnesh_Sivaraman_Resume.pdf public/docs/ && cp resume/Vighnesh_Sivaraman_Resume_Accenture_AIML.pdf public/docs/ 2>/dev/null || true",
     "astro": "astro"
   },
   "dependencies": {
