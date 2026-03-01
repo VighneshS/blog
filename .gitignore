@@ -19,6 +19,13 @@ resume/*.pdf
 resume/*.fls
 resume/*.fdb_latexmk
 resume/*.synctex.gz
+resume/*.xdv
+resume/*.log
+resume/*.out
+resume/*.pdf
+resume/*.fls
+resume/*.fdb_latexmk
+resume/*.synctex.gz
 
 # Generated resume PDFs (built by CI, not committed)
 public/docs/Vighnesh_Sivaraman_Resume*.pdf
