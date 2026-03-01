@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run build:resume && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "build:resume": "cd resume && latexmk -C && latexmk -xelatex -interaction=nonstopmode Vighnesh_Sivaraman_Resume.tex && mkdir -p ../public/docs && cp Vighnesh_Sivaraman_Resume.pdf ../public/docs/Vighnesh_Sivaraman_Resume.pdf",
     "astro": "astro"
