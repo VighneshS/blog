@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "npm run build:resume && astro build",
     "preview": "astro preview",
-    "build:resume": "mkdir -p public/docs && cp resume/Vighnesh_Sivaraman_Resume.pdf public/docs/ && cp resume/Vighnesh_Sivaraman_Resume_Accenture_AIML.pdf public/docs/ 2>/dev/null || true",
+    "build:resume": "cd resume && (command -v latexmk >/dev/null 2>&1 && latexmk -xelatex -interaction=nonstopmode Vighnesh_Sivaraman_Resume.tex && latexmk -xelatex -interaction=nonstopmode Vighnesh_Sivaraman_Resume_Accenture_AIML.tex || echo 'latexmk not found, using pre-compiled PDFs') && cd .. && mkdir -p public/docs && cp resume/Vighnesh_Sivaraman_Resume.pdf public/docs/ && cp resume/Vighnesh_Sivaraman_Resume_Accenture_AIML.pdf public/docs/ 2>/dev/null || true",
     "astro": "astro"
   },
   "dependencies": {
