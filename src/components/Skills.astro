@@ -1,52 +1,52 @@
 ---
 const skillGroups = [
   {
-    category: 'Generative AI & LLMs',
+    category: 'Generative & Agentic AI',
     color: 'purple',
     icon: '🤖',
-    skills: ['GANs', 'Transformers', 'LLM Fine-tuning', 'Prompt Engineering', 'RAG', 'MCP Servers', 'GPT-4', 'Agentic Workflows', 'Vector Databases'],
+    skills: ['Agentic AI', 'MCP Servers & Tools', 'MCP Apps', 'Multi-Agent Orchestration', 'RAG / Graph RAG', 'Prompt Engineering', 'Claude', 'Gemini', 'OpenAI', 'AWS Bedrock / AgentCore', 'Mastra', 'Google ADK'],
   },
   {
-    category: 'ML & Data Science',
-    color: 'blue',
-    icon: '🧠',
-    skills: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Neural Networks', 'RNNs', 'CNNs', 'Model Optimization', 'Data Analysis & Visualization'],
+    category: 'AI Security & DevSecOps',
+    color: 'pink',
+    icon: '🛡️',
+    skills: ['Agent Auth (SigV4 + STS)', 'OAuth 2.1 / PKCE', 'AWS WAF', 'Threat Modelling', 'Pen-test Remediation', 'Aikido', 'Trivy', 'gitleaks', 'Least-privilege IAM', 'ISO 27001'],
   },
   {
-    category: 'Cloud & Infrastructure',
+    category: 'Cloud',
     color: 'orange',
     icon: '☁️',
-    skills: ['AWS ECS', 'AWS EC2', 'AWS S3', 'SageMaker', 'EKS', 'GCP Vertex AI', 'Azure Databricks', 'CloudFormation', 'Multi-account AWS'],
+    skills: ['AWS ECS Fargate', 'ALB', 'IAM / STS', 'KMS', 'Secrets Manager', 'DynamoDB', 'RDS', 'GCP Vertex AI', 'Cloud Run', 'IAP', 'Workload Identity Federation'],
   },
   {
-    category: 'Programming Languages',
-    color: 'green',
-    icon: '💻',
-    skills: ['Python', 'TypeScript', 'JavaScript', 'Java', 'Node.js', 'SQL', 'C++'],
-  },
-  {
-    category: 'Backend & APIs',
-    color: 'blue',
-    icon: '⚙️',
-    skills: ['NestJS', 'Spring Boot', 'RESTful APIs', 'Microservices', 'Event-Driven', 'WebHooks', 'SigV4 Auth', 'pnpm Workspaces', 'Turbo'],
-  },
-  {
-    category: 'Frontend & UI',
-    color: 'pink',
-    icon: '🎨',
-    skills: ['React', 'Angular', 'Tailwind CSS', 'Component Libraries', 'React Hooks', 'Custom Decorators', 'Astro'],
-  },
-  {
-    category: 'DevOps & Tooling',
+    category: 'IaC & DevOps',
     color: 'orange',
     icon: '🔧',
-    skills: ['Docker', 'Kubernetes', 'Terraform', 'Jenkins', 'GitHub Actions', 'CI/CD Pipelines', 'ESM/CJS Modules'],
+    skills: ['Terraform', 'Pulumi', 'Docker (Distroless)', 'Kubernetes / Helm', 'Bitbucket Pipelines', 'GitHub Actions', 'AWS CodePipeline', 'k6 Load Testing'],
   },
   {
-    category: 'NLP & Data',
+    category: 'Languages',
     color: 'green',
-    icon: '📊',
-    skills: ['Tokenization', 'Sentiment Analysis', 'Chatbot Development', 'Power BI', 'matplotlib', 'Seaborn', 'ETL Pipelines'],
+    icon: '💻',
+    skills: ['TypeScript', 'Python', 'Node.js', 'Go', 'Java', 'SQL'],
+  },
+  {
+    category: 'Backend & Data',
+    color: 'blue',
+    icon: '⚙️',
+    skills: ['NestJS', 'Spring Boot', 'REST APIs', 'Webhooks', 'SSE / Streamable HTTP', 'PostgreSQL', 'DynamoDB', 'Elasticsearch', 'Redis'],
+  },
+  {
+    category: 'Frontend',
+    color: 'pink',
+    icon: '🎨',
+    skills: ['React', 'MobX', 'Zustand', 'Tailwind CSS', 'Storybook', 'Astro'],
+  },
+  {
+    category: 'ML Foundations',
+    color: 'blue',
+    icon: '🧠',
+    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'CNNs', 'U-Net', 'NLP Basics'],
   },
 ];
 
@@ -67,7 +67,7 @@ const colorClass: Record<string, string> = {
       <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">What I Work With</h2>
       <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
       <p class="text-slate-500 max-w-xl mx-auto text-sm">
-        A broad toolkit spanning AI/ML, cloud-native engineering, and full-stack development.
+        The tools I use to build and secure production agentic-AI systems.
       </p>
     </div>
 

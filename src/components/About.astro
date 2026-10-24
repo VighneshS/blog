@@ -1,12 +1,12 @@
 ---
 import { yearsExp } from '../lib/experience';
 
-// All professional + academic experience periods (internships & research count)
+// Full-time years only, matching the resume
 const stats = [
-  { value: `${yearsExp}+`, label: 'Years Experience',    icon: '⚡' },
-  { value: '2',            label: 'Countries Worked',    icon: '🌏' },
-  { value: '1',            label: 'Published Paper',     icon: '📄' },
-  { value: '10+',          label: 'AI/ML Systems Built', icon: '🤖' },
+  { value: `~${yearsExp}`, label: 'Years Experience',                icon: '⚡' },
+  { value: '2',            label: 'Countries Worked',                icon: '🌏' },
+  { value: '2',            label: 'Publications',                    icon: '📄' },
+  { value: '2',            label: 'AI Platforms Pen-test Hardened',  icon: '🛡️' },
 ];
 ---
 
@@ -22,23 +22,24 @@ const stats = [
 
         <div class="space-y-4 text-slate-400 leading-relaxed text-[0.95rem]">
           <p>
-            I'm a <span class="text-sky-400 font-medium">Senior Software Engineer & AI/ML Engineer</span> based in
-            West Tambaram, Chennai, India, with {yearsExp}+ years of experience building enterprise-grade software
+            I'm a <span class="text-sky-400 font-medium">Senior AI Engineer</span> based in Chennai, India,
+            with ~{yearsExp} years of software engineering experience.
           </p>
           <p>
-            My expertise sits at the intersection of <span class="text-indigo-400 font-medium">AI/ML</span> and
-            <span class="text-sky-400 font-medium">cloud-native engineering</span> — I architect platforms where
-            autonomous AI agents automate complex workflows, and conversational AI makes data accessible to everyone.
+            I build <span class="text-indigo-400 font-medium">production agentic-AI systems</span> — MCP tooling,
+            agent authentication and LLM automation on AWS and GCP — and the
+            <span class="text-sky-400 font-medium">security</span> that lets them pass enterprise reviews and
+            external pen-tests.
           </p>
           <p>
-            I've shipped production AI solutions using
-            <span class="text-emerald-400 font-medium">MCP servers</span>, GPT-4, and RAG pipelines on AWS.
-            I hold an <span class="text-sky-400 font-medium">MS in Computer Science</span> from UT Arlington
-            (thesis track) and have a peer-reviewed paper published at ACSAC 2023.
+            I've worked with <span class="text-emerald-400 font-medium">Claude, Gemini and OpenAI</span> models,
+            MCP servers and multi-agent frameworks. I hold an
+            <span class="text-sky-400 font-medium">MS in Computer Science</span> from UT Arlington (thesis track)
+            and co-authored a peer-reviewed paper at ACSAC 2023.
           </p>
           <p>
-            When I'm not building AI systems, I explore new ML techniques, contribute to open source,
-            and write about distributed systems architecture.
+            Outside work I build side projects, such as an LLM multi-agent trading-research platform and a
+            land-intelligence MCP server, both running on Google Cloud.
           </p>
         </div>
 

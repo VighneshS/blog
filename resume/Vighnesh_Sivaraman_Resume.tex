@@ -1,55 +1,119 @@
-\input{_shared/preamble}
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+% Font Awesome 6 (moderncv >= 2.6) renamed \faHome to \faHouse; alias it for older installs
+\AtBeginDocument{\providecommand*{\faHouse}{\faHome}}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\name{Vighnesh}{Sivaraman}
+\newcommand*{\customcventry}[7][.13em]{%
+\noindent\begin{tabular*}{\textwidth}{@{}p{0.62\textwidth}@{\extracolsep{\fill}}p{0.35\textwidth}@{}}
+{\bfseries #4} & \raggedleft\bfseries #5 \tabularnewline[-0.1em]
+{\itshape #3} & \raggedleft\itshape #2 \tabularnewline
+\end{tabular*}%
+\ifx&#7&%
+\else{%
+\par\vspace{-0.1em}%
+\begin{minipage}{\textwidth}%
+\small#7%
+\end{minipage}}\fi%
+\par\addvspace{#1}}
 \begin{document}
 \makecvtitle
 \vspace*{-10mm}
-
-\begin{center}\textbf{ Senior Software Engineer | AI/ML $\bullet$ Full-Stack $\bullet$ AWS $\cdot$ GCP $\cdot$ Azure}\end{center}
-
-\input{_shared/contact}
+\begin{center}\textbf{Senior AI Engineer | Agentic AI \& MCP | AWS $\cdot$ GCP | AI Security}\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+\faMobile\enspace +91 8148285956 & \enspace jeevavignesh@gmail.com & \faHouse\enspace Chennai, TN, IND \\
+\faLinkedin\enspace \color{blue} \href{https://www.linkedin.com/in/vighnesh-sivaraman/}{in/vighnesh-sivaraman} &
+\faGithub\enspace \color{blue} \href{https://github.com/VighneshS}{github.com/VighneshS} & \enspace {$\mathbb{X}$}\enspace \color{blue} \href{https://x.com/jeevavighnesh}{x.com/jeevavighnesh} \\
+& \faGlobe\enspace \color{blue} \href{https://vighneshs.github.io/blog}{vighneshs.github.io/blog} &
+\end{tabular}
+\end{center}
 
 \section{Profile}
-{Senior Software Engineer with 8+ years building full-stack, cloud-native, and AI/ML systems. Currently architecting agentic AI platforms on AWS using MCP servers and RAG pipelines, delivering a 70\% reduction in manual intervention. Track record of shipping production ML, microservices, and developer tooling across AWS, GCP, and Azure.}
+{Senior AI Engineer with $\sim$7 years of software engineering experience, building production agentic-AI systems --- MCP tooling, agent authentication and LLM automation on AWS and GCP. At Kripya, built zero-standing-credential authentication for a \textbf{Fortune-10 customer's AI agents} and was the customer's point of contact for it, delivered an AI support co-pilot MVP, and hardened two AI platforms for external pen-tests. MS CS (UT Arlington); ACSAC 2023 author.}
 
 \section{Professional Experience}
-\customcventry{07/2024 ‐ Present}{{\color{blue}\href{https://kripya.com/}{Kripya Solutions Private Ltd}}}{Sr. Software Engineer,}{Chennai, TN, IND}{}{
-{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-\item Architected agentic AI platform using MCP servers on AWS ECS --- autonomous agents handle project management, incident response, and knowledge workflows, cutting manual intervention by \textbf{70\%}
-\item Built conversational AI products (analytics, recruitment, sustainability, customer support) using GPT-4 and RAG; enabled non-technical teams to self-serve data queries across enterprise knowledge bases
-\item Engineered intelligent document generation pipeline automating root cause analysis reports (PDF/DOCX) from incident tickets, significantly reducing time-to-resolution for engineering escalations
-\item Drove cloud-native microservices modernisation on AWS (NestJS, ECS, SigV4, CloudFormation); designed Atlassian integrations (Jira, Confluence) for AI-driven ticket tracking and knowledge management
-\item Led monorepo modernisation (ESM/CJS migration, Turbo + pnpm workspaces, React design system refactor) reducing CI build times by \textbf{40\%}
-\item Implemented webhook-driven multi-agent observability pipeline enabling real-time incident detection, automated alerting, and event-driven escalation across distributed services
+\customcventry{07/2024 ‐ Present}{\textcolor{blue}{\href{https://kripya.com/}{Kripya Solutions Private Ltd}}}{Sr. Software Engineer / Generative AI Engineer,}{Chennai, TN, IND}{}{
+{\textit{Enterprise AI Platform \& Agentic Systems}
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, itemsep=1pt, topsep=2pt]
+\item Built \textbf{zero-standing-credential authentication for a Fortune-10 customer's autonomous AI agents}: STS-verified SigV4 caller identity and cross-account AssumeRole $\rightarrow$ Secrets Manager (50+ tests); fixed SigV4 auth for Bedrock agents; wired RBAC and the audit trail into the PLM MCP server and wrote its security-architecture document.
+\item \textbf{Customer point of contact} for the auth workstream: presented the MCP authentication approach to the customer's engineering team (commended by the CTO) and drove the build plan through delivery.
+\item Built \textbf{Jira and Confluence MCP tools for AI agents} (issue fetch/upsert/comment, incident summaries, multi-edit Confluence upsert) and the auth, security and load-testing layers of a production PLM MCP server (NestJS, AWS ECS); completed the agent-delegation backend.
+\item Fixed a \textbf{production auth failure on a strategic customer's two-node tenant (0/20 $\rightarrow$ 20/20 requests)} by isolating the load-balancer stickiness cookie in controlled tests and tracing the root cause to the app-server clustering configuration.
+\item \textbf{Hardened AI platforms for external security testing}: made the production Terraform root multi-account for a security-test environment (prod plan unchanged); added AWS WAF rules (allowlist 772 $\rightarrow$ 5; KnownBadInputs blocking after 741 hostile / 0 legitimate hits) and MFA-gated IAM; fixed a CVSS 8.7 CORS flaw (AppSec-approved) and \textbf{10 findings (6 High) in an AI agent platform}, test-first.
+\item \textbf{Delivered the MVP of SCOPE}, an ITIL AI co-pilot for global support in Microsoft Teams, and built its Jira/Confluence agent tools and webhooks that generate Claude-written root-cause reports (PDF/DOCX) at $\sim$\$0.065 per ticket.
+\item \textbf{Took the lead on most issues in a retail customer's GenAI design pilot}: built an Adobe-style canvas zoom praised in pilot feedback and integrated automatic model selection across 5 image-generation models.
+\item Validated, fixed and extended an agent-generated \textbf{k6 load-testing harness for MCP servers} (SSE / Streamable HTTP) and wrote a PKCE-OAuth suite; an ECS autoscaling stress test hit 31,950 / 31,950 requests at p95 293\,ms, scaling 2 $\rightarrow$ 10 tasks, and exposed a health-check grace-period timeout storm.
+\item Hardened the supply chain: implemented \textbf{Google Distroless images ($-$17.7\% size, 0 Critical/High CVEs)}, migrated to pnpm 11 (253 overrides), shipped $\sim$25 tested dependency upgrades; extended CodePipeline/CodeBuild to multiple environments and wrote Terraform for new pre-prod environments.
+\end{itemize}
+\textit{Kripya AI Practice}
+\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, itemsep=1pt, topsep=2pt]
+\item Deployed Kripya's \textbf{FinOps product to AWS} with Pulumi (VPC, RDS, ECS Fargate, ALB, IAM) and Bitbucket $\rightarrow$ ECR $\rightarrow$ ECS CI/CD; split it into three apps with zero resource deletions; \textbf{closed 81/81} of our department's findings in an 868-finding AWS security audit.
+\item Built the \textbf{agent-platform layer of Kripya's Nx monorepo} (tenant-aware AgentRegistry, 17 Mastra MCP tools, MCP server, Google ADK migration); co-built a Jira-to-test-case agent (Electron app, SonarQube CI, runtime Gemini / GPT / Qwen switching); designed a 24-hook Claude Code governance catalog and built AI code-acceptance metrics in Grafana.
+\item \textbf{Helped build Kripya's AI team}: wrote the AI Engineer job description and interview assessments, built a screening tool for a 117-candidate campus drive, and mentored an intern.
+\item Built a \textbf{Gemini proof of concept} that checks engineering drawings against a 156-point ASME checklist, measured its cost ($\sim$INR 10 per model call), and wrote the 10-week project proposal; also compared cloud costs across AWS, Azure and GCP and recommended hardware for running LLMs in-house.
 \end{itemize}}}
 
-\customcventry{01/2023 ‐ 07/2024}{{\color{blue}\href{https://www.aliciotech.com/}{Allic Infotech}}}{Machine Learning Engineer Intern,}{Silicon Valley, CA}{}{
-{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
-\item Developed Python application detecting individual skin layers from ultrasound images using a custom RNN model; preprocessed medical imaging datasets and applied data augmentation to improve layer detection accuracy
-\item Optimised model performance through hyperparameter tuning and cross-validation; established end-to-end CI/CD pipeline to deploy the model as a production web application
+\newpage
+\customcventry{01/2023 ‐ 07/2024}{\textcolor{blue}{\href{https://www.aliciotech.com/}{Allic Infotech}}}{Machine Learning Engineer Intern,}{Silicon Valley, CA}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, topsep=2pt]
+\item Built a U-Net (ResNet-50 encoder) PyTorch model segmenting skin layers in ultrasound images; shipped it as a Flask web app.
 \end{itemize}}}
 
-\input{_shared/revature-da}
-\input{_shared/uta-research}
-\input{_shared/revature-senior}
+\customcventry{09/2022 ‐ 01/2023}{\textcolor{blue}{\href{https://revature.com/}{Revature, LLC}}}{Data Analyst Intern,}{Reston, VA}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, topsep=2pt]
+\item Built Azure Databricks data-integrity notebooks and Power BI dashboards for an ETL data warehouse.
+\end{itemize}}}
 
-\input{_shared/education}
-\input{_shared/publications}
+\customcventry{02/2022 ‐ 09/2022}{\textcolor{blue}{\href{https://ranger.uta.edu/~mingli/}{The University of Texas at Arlington}}}{Graduate Research Assistant,}{Arlington, TX}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, topsep=2pt]
+\item Built Android apps and ML models for the ACSAC 2023 continuous-authentication paper and a cloud IoT water-quality system.
+\end{itemize}}}
 
-\section{Certifications}
-{\begin{itemize}[label=\textbullet]
-\item {\textbf{Information Systems Security Professionals} --- Certified by CNSS \& NSA (CNSSI 4013E, December 2021)}
-\item {\textbf{System Administrators Certification} --- Certified by CNSS \& NSA (NSTISSI 4011, December 2021)}
-\end{itemize}}
+\customcventry{08/2016 ‐ 12/2020}{\textcolor{blue}{\href{https://revature.com/}{Revature, LLC}}}{Senior Software Engineer,}{Chennai, TN, IND}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}, itemsep=1pt, topsep=2pt]
+\item Led a five-person operations team handling production fixes and feature work; built Java Spring, Angular and MySQL microservices.
+\item Managed product infrastructure on AWS and GCP (EC2, RDS, EKS) with Terraform.
+\end{itemize}}}
 
 \section{Skills}
-{\begin{itemize}[label=\textbullet]
-\item {\textbf{AI \& LLMs:} GPT-4, RAG, MCP Servers, Agentic Workflows, Prompt Engineering, LLM Fine-tuning, GANs, Transformers, Vector Databases}
-\item {\textbf{ML \& Data:} TensorFlow, PyTorch, Scikit-learn, RNNs, CNNs, Power BI, ETL Pipelines, Data Visualization}
-\item {\textbf{Cloud:} AWS (ECS, EC2, S3, EKS, SageMaker, CloudFormation), GCP Vertex AI, Azure Databricks}
-\item {\textbf{Backend \& DevOps:} NestJS, Spring Boot, Node.js, Python, Java, Docker, Kubernetes, Terraform, GitHub Actions, CI/CD}
-\item {\textbf{Frontend:} React, Angular, TypeScript, Tailwind CSS, Astro, pnpm Workspaces, Turbo}
-\item {\textbf{Data \& NLP:} SQL, Tokenization, Sentiment Analysis, Chatbot Development, Seaborn, matplotlib}
+{\begin{itemize}[label=\textbullet, itemsep=1pt]
+\item {\textbf{Generative \& Agentic AI:} Generative AI, Agentic AI, MCP servers, tools \& apps; LLMs (Claude, Gemini, OpenAI, AWS Bedrock / AgentCore); Multi-Agent Orchestration; RAG / Graph RAG; Prompt Engineering; Mastra, Google ADK}
+\item {\textbf{AI Security \& DevSecOps:} Agent authentication (AWS SigV4 + STS, OAuth 2.1 / PKCE); AWS WAF; threat modelling \& security HLDs; pen-test remediation; Aikido, Trivy, gitleaks; least-privilege IAM; ISO 27001}
+\item {\textbf{Cloud \& Infra:} AWS (ECS Fargate, ALB, IAM, STS, KMS, Secrets Manager, DynamoDB, RDS); GCP (Vertex AI, Cloud Run, IAP, WIF); Terraform, Pulumi; Docker, Kubernetes / Helm}
+\item {\textbf{Languages \& Frameworks:} TypeScript, Python, Node.js, Go, Java; NestJS, Spring Boot; React, MobX, Zustand, Storybook; REST, Webhooks, SSE / Streamable HTTP; PostgreSQL, DynamoDB, Elasticsearch, Redis}
+\item {\textbf{Testing \& DevOps:} Vitest, Playwright, k6 load testing + ECS autoscaling validation; Bitbucket Pipelines, GitHub Actions; pnpm, Turbo, Nx monorepos. \textbf{ML:} PyTorch, TensorFlow, Scikit-learn}
 \end{itemize}}
 
-\input{_shared/projects}
+\section{Projects}
+{\begin{itemize}[label=\textbullet, leftmargin=0.5cm, itemsep=1pt]
+% TODO: link to the repo once it is public, e.g. \href{https://github.com/VighneshS/HermesTradingAgent}{...}
+\item \textbf{HermesTradingAgent} (LLM multi-agent research platform, 2026) --- Gemini (Vertex AI) 4-agent debate, episodic memory, reflection and a weekly LLM critic on serverless GCP (Cloud Run, BigQuery); Pulumi IaC, keyless GitHub Actions deploys via WIF (est. $\sim$INR 700/month); Deflated Sharpe and Monte Carlo validation; 277 commits, 208 tests.
+% TODO: link to the repo once the phone number is removed and auth is added
+\item \textbf{Ellai} (land-intelligence MCP server, 2026) --- TypeScript Streamable-HTTP MCP server on Cloud Run with 13 tools: GPS $\rightarrow$ survey-number resolution (TNGIS WFS, Turf.js / PostGIS), flood and environmental screening, Gemini multimodal analysis of Tamil / English title deeds; CI/CD with a 21-check live smoke gate.
+\item \textbf{Earlier ML work:} \textcolor{blue}{\href{https://github.com/VighneshS/neura_colorizer}{Neura Coloriser}} (CNN autoencoder), \textcolor{blue}{\href{https://vighnesh-studies.blogspot.com/2021/05/disaster-alert-system.html}{Disaster Alert}} (NLP), CIFAR-10 (CNN), \textcolor{blue}{\href{https://github.com/VighneshS/find_route}{find\_route}} (A*).
+\end{itemize}}
+
+\section{Education}
+\customcventry[.6em]{2021-2023}{\textcolor{blue}{\href{https://www.uta.edu/}{The University of Texas at Arlington}}}{MS Computer Science (Thesis)}{Arlington, TX, USA}{}{\textbf{Thesis:} Continuous Authentication using Human-Induced Electric Potential. Focus: ML, AI, Information Security.}
+
+\customcventry{2013-2017}{\textcolor{blue}{\href{https://www.rajalakshmi.org/}{Rajalakshmi Engineering College}}}{B.E. Electronics and Communication Engineering}{Chennai, TN, IND}{}{}
+
+\section{Publications \& Certifications}
+{\begin{itemize}[label=\textbullet, itemsep=1pt]
+\item \textbf{\textcolor{blue}{\href{https://doi.org/10.1145/3627106.3627124}{Continuous Authentication Using Human-Induced Electric Potential}}} --- ACSAC 2023 (co-author)
+\item \textbf{\textcolor{blue}{\href{https://www.academia.edu/38392049/Real_TimeAccident_Analytics}{Real-time Accident Analytics}}} --- Journal of Chemical and Pharmaceutical Sciences (ISSN 0974-2115), June 2017
+\item \textbf{CNSS \& NSA certified:} InfoSec Professional (CNSSI 4013E), System Administrator (NSTISSI 4011), 2021
+\end{itemize}}
 
 \end{document}

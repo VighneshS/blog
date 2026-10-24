@@ -3,6 +3,26 @@ const base = import.meta.env.BASE_URL;
 
 const projects = [
   {
+    category: 'Agentic AI',
+    name: 'HermesTradingAgent',
+    description:
+      'LLM multi-agent research platform for Indian equities, run in paper-trading mode. A Gemini (Vertex AI) 4-agent debate, episodic memory, post-trade reflection and a weekly LLM critic run on serverless GCP. Every strategy is checked with Deflated Sharpe and Monte Carlo validation, and results are reported honestly, including the ones with no edge. 277 commits, 208 tests.',
+    tech: ['Python', 'Gemini', 'Vertex AI', 'Cloud Run', 'BigQuery', 'Firestore', 'Pulumi', 'GitHub Actions', 'React'],
+    image: null,
+    emoji: '📈',
+    gradient: 'from-emerald-900/40 to-sky-900/40',
+  },
+  {
+    category: 'MCP Server',
+    name: 'Ellai: Land Intelligence',
+    description:
+      'Streamable-HTTP MCP server on Cloud Run with 13 tools for land due diligence around Chennai: GPS to survey-number resolution from state map data, flood and environmental screening, and Gemini multimodal analysis of Tamil and English title deeds. CI/CD runs a 21-check live smoke test after every deploy.',
+    tech: ['TypeScript', 'MCP SDK', 'Gemini', 'Turf.js', 'PostGIS', 'Cloud Run', 'GitHub Actions'],
+    image: null,
+    emoji: '🧭',
+    gradient: 'from-amber-900/40 to-emerald-900/40',
+  },
+  {
     category: 'Data Mining',
     name: 'Disaster Alert System',
     description:
@@ -19,8 +39,8 @@ const projects = [
     category: 'Machine Learning',
     name: 'Neura Coloriser',
     description:
-      'A Generative Adversarial Network that colorizes grayscale input images. Uses LAB color space representations and a custom self-developed GAN architecture for realistic, high-quality color generation.',
-    tech: ['Python 3.7', 'TensorFlow 2.7', 'Keras', 'GAN', 'Scikit-learn', 'LAB Color Space'],
+      'A convolutional autoencoder that colorizes grayscale images. It works in the LAB color space, predicting the color channels from the lightness channel.',
+    tech: ['Python 3.7', 'TensorFlow 2.7', 'Keras', 'CNN Autoencoder', 'LAB Color Space'],
     image: 'cifar10.png',
     emoji: '🎨',
     gradient: 'from-purple-900/40 to-indigo-900/40',
@@ -106,7 +126,7 @@ const projects = [
       <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Projects</h2>
       <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
       <p class="text-slate-500 max-w-lg mx-auto text-sm">
-        Academic and personal projects spanning data mining, machine learning, AI, and research.
+        Personal and academic projects, from LLM agents and MCP servers to machine-learning fundamentals.
       </p>
     </div>
 
