@@ -1,0 +1,71 @@
+---
+const base = import.meta.env.BASE_URL;
+const pdfPath = `${base}/docs/Certificate-CNSS4011-4013-Sivaraman Vighnesh.pdf`;
+
+const certs = [
+  {
+    title: 'Information Systems Security Professionals',
+    issuer: 'Committee on National Security Systems & National Security Agency',
+    certNo: 'CNSSI No. 4013E',
+    date: 'December 20, 2021',
+    emoji: '🛡️',
+  },
+  {
+    title: 'System Administrators Certification',
+    issuer: 'Committee on National Security Systems & National Security Agency',
+    certNo: 'NSTISSI No. 4011',
+    date: 'December 20, 2021',
+    emoji: '🔐',
+  },
+];
+---
+
+<section id="certifications">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Credentials</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Certifications</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-5">
+      {certs.map((cert, i) => (
+        <div class={`glass rounded-2xl p-6 sm:p-7 hover:border-sky-400/25 transition-all duration-300 flex flex-col reveal reveal-delay-${i + 1}`}>
+          <div class="flex items-start gap-4 mb-5">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
+              style="background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2);"
+            >
+              {cert.emoji}
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-base text-white leading-snug mb-1.5">{cert.title}</h3>
+              <p class="text-slate-500 text-xs leading-relaxed">{cert.issuer}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-800/60">
+            <div>
+              <div class="font-mono text-sky-400 text-xs font-medium">{cert.certNo}</div>
+              <div class="text-slate-500 text-xs mt-0.5">{cert.date}</div>
+            </div>
+            <a
+              href={pdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-sky-400 border border-slate-700 hover:border-sky-500/40 px-3 py-1.5 rounded-lg transition-all"
+            >
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              View PDF
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

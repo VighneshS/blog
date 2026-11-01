@@ -1,0 +1,31 @@
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+.idea
+# Astro
+dist/
+.astro/
+src/env.d.ts
+
+# LaTeX build artifacts
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
+resume/*.fls
+resume/*.fdb_latexmk
+resume/*.synctex.gz
+resume/*.xdv
+resume/*.log
+resume/*.out
+resume/*.pdf
+resume/*.fls
+resume/*.fdb_latexmk
+resume/*.synctex.gz
+
+# Generated resume PDFs (built by CI, not committed)
+public/docs/Vighnesh_Sivaraman_Resume*.pdf

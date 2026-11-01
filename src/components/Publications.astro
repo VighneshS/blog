@@ -1,0 +1,77 @@
+---
+const publications = [
+  {
+    type: 'Conference Paper',
+    title: 'Continuous Authentication Using Human-Induced Electric Potential',
+    authors: 'Murali, S., Jin, W., Sivaraman, V., Zhu, H., Ji, T., Li, P., & Li, M.',
+    venue: 'Proceedings of the 39th Annual Computer Security Applications Conference (ACSAC 2023)',
+    publisher: 'Association for Computing Machinery',
+    doi: '10.1145/3627106.3627124',
+    doiLink: 'https://doi.org/10.1145/3627106.3627124',
+    year: '2023',
+    tags: ['Security', 'Authentication', 'Biometrics', 'Electric Potential', 'ACM ACSAC'],
+  },
+  {
+    type: 'Journal Article',
+    title: 'Real-time Accident Analytics',
+    authors: 'Vighnesh Sivaraman et al.',
+    venue: 'Journal of Chemical and Pharmaceutical Sciences',
+    publisher: 'ISSN: 0974-2115',
+    doi: null,
+    doiLink: null,
+    year: 'June 2017',
+    tags: ['Analytics', 'Real-time Systems', 'Data Processing', 'Safety Engineering'],
+  },
+];
+---
+
+<section id="publications" style="background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 50%, var(--bg) 100%);">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+
+    <div class="text-center mb-14 reveal">
+      <div class="section-label" style="display: inline-flex;">Research</div>
+      <h2 class="font-display font-bold text-4xl text-white mb-2 mt-3">Publications</h2>
+      <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+    </div>
+
+    <div class="space-y-5">
+      {publications.map((pub, i) => (
+        <div class={`glass rounded-2xl p-6 sm:p-8 hover:border-sky-400/25 transition-all duration-300 reveal reveal-delay-${i + 1}`}>
+          <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+            <span class="tag tag-purple">{pub.type}</span>
+            <span class="text-slate-400 text-sm font-medium tabular-nums">{pub.year}</span>
+          </div>
+
+          <h3 class="font-display font-semibold text-xl text-white mb-2 leading-snug">{pub.title}</h3>
+          <p class="text-slate-500 text-sm mb-1 italic">{pub.authors}</p>
+          <p class="text-sky-400/80 text-sm mb-5">{pub.venue} · {pub.publisher}</p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-800/60">
+            <div class="flex flex-wrap gap-1.5 flex-1">
+              {pub.tags.map(tag => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+            {pub.doi && (
+              <a
+                href={pub.doiLink!}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-1.5 text-xs font-mono shrink-0 transition-colors"
+                style="color: rgba(52,211,153,0.75);"
+                onmouseover="this.style.color='#34d399'"
+                onmouseout="this.style.color='rgba(52,211,153,0.75)'"
+              >
+                DOI: {pub.doi}
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
